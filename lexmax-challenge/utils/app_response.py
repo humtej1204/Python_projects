@@ -1,7 +1,7 @@
 from flask import Response
 import json
 
-class AppResponse():
+class ApiResponse():
     def success(self, data, status_code=200):
         res_data = {
             "success": True,
