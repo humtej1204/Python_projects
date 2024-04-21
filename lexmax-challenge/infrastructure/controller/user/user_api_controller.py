@@ -21,22 +21,22 @@ class UserApiController:
         def get_by_id(id):
             user = self.user_service.get_by_id(id)
             
-            return ApiResponse(user)
+            return ApiResponse().success(user)
         
         @self.app.route('/', methods=['POST'])
         def create():
             user = self.user_service.create(request.json)
             
-            return ApiResponse(user, 201)
+            return ApiResponse().success(user, 201)
         
         @self.app.route('/<id>', methods=['PATCH'])
         def update(id):
             user = self.user_service.update(id, request.json)
             
-            return ApiResponse(user)
+            return ApiResponse().success(user)
         
         @self.app.route('/<id>', methods=['DELETE'])
         def delete(id):
             user = self.user_service.delete(id)
             
-            return ApiResponse(user)
+            return ApiResponse().success(user, 200)

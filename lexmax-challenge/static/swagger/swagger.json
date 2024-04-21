@@ -21,7 +21,18 @@
             "description": "Operación exitosa",
             "content": {
               "application/json": {
-                "example": "[{\"id\":1,\"name\":\"John\",\"lastname\":\"Doe\",\"email\":\"john@example.com\",\"address\":\"123 Main St\",\"reference_address\":\"Nearby Park\",\"phone_number\":\"123-456-7890\"}, {...}]"
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {"type": "boolean"},
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object"
+                      }
+                    }
+                  }
+                }
               }
             }
           }
@@ -69,7 +80,18 @@
         },
         "responses": {
           "201": {
-            "description": "Registro creado exitosamente"
+            "description": "Registro creado exitosamente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {"type": "boolean"},
+                    "data": {"type": "object"}
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -94,7 +116,13 @@
             "description": "Operación exitosa",
             "content": {
               "application/json": {
-                "example": "{\"id\":1,\"name\":\"John\",\"lastname\":\"Doe\",\"email\":\"john@example.com\",\"address\":\"123 Main St\",\"reference_address\":\"Nearby Park\",\"phone_number\":\"123-456-7890\"}"
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {"type": "boolean"},
+                    "data": {"type": "object"}
+                  }
+                }
               }
             }
           }
@@ -155,7 +183,18 @@
         },
         "responses": {
           "200": {
-            "description": "Registro actualizado exitosamente"
+            "description": "Registro actualizado exitosamente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {"type": "boolean"},
+                    "data": {"type": "object"}
+                  }
+                }
+              }
+            }
           }
         }
       },
@@ -174,8 +213,19 @@
           }
         ],
         "responses": {
-          "204": {
-            "description": "Registro eliminado exitosamente"
+          "200": {
+            "description": "Registro eliminado exitosamente",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {"type": "boolean"},
+                    "data": {"type": "number"}
+                  }
+                }
+              }
+            }
           }
         }
       }

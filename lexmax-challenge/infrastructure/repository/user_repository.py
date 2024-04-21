@@ -44,7 +44,7 @@ class UserRepository():
     
         self.db.session.commit()
         
-        return user.serialize()
+        return user
     
     def delete(self, id):
         user = self.get_by_id(id)

@@ -23,6 +23,6 @@ class UserApplicationService:
         return user.serialize()
     
     def delete(self, id):
-        self.user_repo.delete(id)
+        user = self.user_repo.delete(id)
         
-        return id
+        return user
