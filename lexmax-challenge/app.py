@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_cors import CORS
 from infrastructure.configuration.app_context import AppContext
 from infrastructure.configuration.database import database
 from infrastructure.configuration.environments import env
@@ -11,9 +12,18 @@ def create_app():
     
     swagger_config(app)
     
-    from infrastructure.routes import user_routes
-    user_routes(app, app_context)
+    from infrastructure.server import router
+    router(app, app_context)
     
     database.init_app(app)
+    
+    CORS(app, resources={
+        r"/api/*": {
+            "origins": [
+                "http://localhost:*",
+                "http://127.0.0.1:*",
+            ]
+        }
+    })
     
     return app

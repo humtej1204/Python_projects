@@ -1,4 +1,5 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request
+from utils.app_response import ApiResponse
 
 from application.user.user_service import UserApplicationService
 
@@ -14,28 +15,28 @@ class UserApiController:
         def get_all():
             users = self.user_service.get_all()
             
-            return jsonify(users)
+            return ApiResponse().success(users)
         
         @self.app.route('/by_id/<id>', methods=['GET'])
         def get_by_id(id):
             user = self.user_service.get_by_id(id)
             
-            return jsonify(user)
+            return ApiResponse(user)
         
         @self.app.route('/', methods=['POST'])
         def create():
             user = self.user_service.create(request.json)
             
-            return user
+            return ApiResponse(user, 201)
         
         @self.app.route('/<id>', methods=['PATCH'])
         def update(id):
             user = self.user_service.update(id, request.json)
             
-            return jsonify(user)
+            return ApiResponse(user)
         
         @self.app.route('/<id>', methods=['DELETE'])
         def delete(id):
             user = self.user_service.delete(id)
             
-            return jsonify(user)
+            return ApiResponse(user)
