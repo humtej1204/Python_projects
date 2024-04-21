@@ -1,7 +1,7 @@
 from flask import Blueprint, request
-from utils.app_response import ApiResponse
+from src.utils.app_response import ApiResponse
 
-from application.user.user_service import UserApplicationService
+from src.application.user.user_service import UserApplicationService
 
 class UserApiController:
     def __init__(self, app_context):

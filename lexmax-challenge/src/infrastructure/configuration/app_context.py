@@ -1,4 +1,4 @@
-from infrastructure.repository.user_repository import UserRepository
+from src.infrastructure.repository.user_repository import UserRepository
 
 class AppContext():
     def __init__(self, db):

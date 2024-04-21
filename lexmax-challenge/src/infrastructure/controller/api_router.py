@@ -1,4 +1,4 @@
-from infrastructure.controller.user.user_api_controller import UserApiController
+from src.infrastructure.controller.user.user_api_controller import UserApiController
 from flask import Blueprint
 
 class ApiRouter():

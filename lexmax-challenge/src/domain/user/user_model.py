@@ -1,4 +1,4 @@
-from domain.common.base_model import Base
+from src.domain.common.base_model import Base
 
 class User(Base):
     __tablename__ = 'user'

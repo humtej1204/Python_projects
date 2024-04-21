@@ -1,4 +1,4 @@
-from domain.user.user_model import User
+from src.domain.user.user_model import User
 
 class UserRepository():
     def __init__(self, db):

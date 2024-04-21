@@ -1,4 +1,4 @@
-from infrastructure.controller.user.user_app_controller import UserAppController
+from src.infrastructure.controller.user.user_app_controller import UserAppController
 from flask import Blueprint
 
 class AppRouter():

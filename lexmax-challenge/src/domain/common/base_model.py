@@ -1,4 +1,4 @@
-from infrastructure.configuration.database import database
+from src.infrastructure.configuration.database import database
 
 class Base(database.Model):
     __abstract__ = True
