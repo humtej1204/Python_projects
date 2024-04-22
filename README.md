@@ -29,12 +29,14 @@ Para ejecutar la solución, sigue estos pasos:
 
 ### Ejecutarlo con DOCKER:
 > Antes que nada asegurate de tener instalado DOCKER en tu maquina.
+
 Ejecuta los siguientes comandos:
 * Para construir el contenedor usa `docker build -t flaskapp .``
 * Para correr el contenedor usa `docker run -it -p 5000:5000 flaskapp`
 
 ### Ejecutarlo sin DOCKER:
 > Antes que nada asegurate de tener instalada la version `3.8.10` de `python` y la version `24.0` de `pip`.
+
 Ejecuta los siguientes comandos:
 * Instala las dependencias utilizando `pip install -r package-py.txt`.
 * Ejecuta la aplicación utilizando `python app.py`.
